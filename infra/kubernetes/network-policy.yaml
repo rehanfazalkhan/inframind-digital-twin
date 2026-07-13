@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: inframind-api
+  namespace: inframind
+spec:
+  podSelector:
+    matchLabels: { app: inframind-api }
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - ports: [{ protocol: TCP, port: 8000 }]
+  egress:
+    - to: []
+      ports:
+        - { protocol: TCP, port: 443 }
+        - { protocol: UDP, port: 53 }

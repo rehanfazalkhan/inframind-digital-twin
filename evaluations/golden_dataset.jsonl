@@ -1,0 +1,4 @@
+{"id":"public-admin-ingress","expected_title":"Internet-wide administrative ingress","expected_severity":"critical","expected_category":"security"}
+{"id":"public-object-storage","expected_title":"Potentially public object storage","expected_severity":"high","expected_category":"security"}
+{"id":"database-ha-review","expected_title":"Database availability configuration needs review","expected_severity":"high","expected_category":"reliability"}
+{"id":"cost-concentration","expected_title":"High monthly cost concentration","expected_severity":"medium","expected_category":"finops"}

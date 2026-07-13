@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070a16" />
+    <title>InfraMind · Cloud Digital Twin</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="topbar">
+        <div class="brand"><span class="mark">✦</span><div><p>Cloud intelligence platform</p><h1>Infra<span>Mind</span></h1></div></div>
+        <nav><button class="nav-active">Digital twin</button><button>MCP gateway</button><button>Change review</button></nav>
+        <div class="runtime"><i></i><span id="runtime">Verifying runtime</span></div>
+      </header>
+
+      <section class="hero">
+        <div><p class="eyebrow">Multi-cloud architecture intelligence</p><h2>Understand every dependency<br />before it becomes an outage.</h2></div>
+        <div class="hero-actions"><button id="refresh" class="secondary">Refresh topology</button><button id="analyze" class="primary">Run specialist review <span>→</span></button></div>
+      </section>
+
+      <section class="metric-grid" aria-label="Cloud posture metrics">
+        <article><span>Resources mapped</span><strong id="resource-count">—</strong><small>read-only inventory graph</small></article>
+        <article><span>Dependency paths</span><strong id="edge-count">—</strong><small>configuration-backed edges</small></article>
+        <article><span>Risk exposure</span><strong id="risk-score">—</strong><small>specialist risk score</small></article>
+        <article><span>Approval boundary</span><strong>Locked</strong><small>no autonomous mutation</small></article>
+      </section>
+
+      <section class="workbench">
+        <section class="twin-panel">
+          <div class="panel-head"><div><p class="eyebrow">Topology canvas</p><h3 id="scope-name">Loading cloud graph</h3></div><span class="live-label"><i></i> DIGITAL TWIN</span></div>
+          <div class="legend"><span class="aws">AWS</span><span class="azure">AZURE</span><span class="service">SERVICE</span><span class="data">DATA</span></div>
+          <div id="graph" class="graph"><p class="empty">Discovering architecture…</p></div>
+          <div class="impact-strip"><div><span>SELECTED CHANGE IMPACT</span><strong id="impact-copy">Select a resource node to calculate downstream blast radius.</strong></div><span id="impact-count" class="impact-number">—</span></div>
+        </section>
+
+        <aside class="inspector">
+          <p class="eyebrow">Resource inspector</p>
+          <div id="inspector" class="empty"><strong>Explore the twin</strong><p>Select a resource to inspect its service dependencies and change impact.</p></div>
+          <div class="question"><label for="question">Ask the architecture</label><div><input id="question" placeholder="What breaks if orders-primary fails?" /><button id="ask">Ask</button></div><p id="answer"></p></div>
+        </aside>
+      </section>
+
+      <section class="bottom-grid">
+        <section class="findings-panel"><div class="panel-head"><div><p class="eyebrow">Evidence-backed findings</p><h3>Specialist review</h3></div><span id="finding-count" class="count-pill">0 findings</span></div><div id="findings" class="finding-list"><p class="empty">Run the specialist review to inspect recommendations.</p></div></section>
+        <aside class="proposal-panel"><p class="eyebrow">Governed remediation</p><h3>Terraform change set</h3><div id="proposal" class="proposal-empty"><span>⌘</span><p>Generate a reviewable remediation proposal from high-severity evidence.</p></div><button id="proposal-button" class="primary full">Generate proposal</button><button id="approve" class="secondary full" disabled>Approve proposal</button><small>Approval enables a GitHub pull request only when a configured credential and repository are present.</small></aside>
+      </section>
+    </main>
+    <script src="/static/app.js?v=20260713" defer></script>
+  </body>
+</html>
